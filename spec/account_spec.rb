@@ -20,4 +20,11 @@ describe Account do
       expect(subject.balance).to eq(500)
     end
   end
+  describe 'View current balance' do
+    it 'allows user to check their balance' do
+      subject.deposit(1250)
+      subject.withdraw(500)
+      expect(subject.check_balance).to eq(subject.balance)
+    end
+  end
 end
