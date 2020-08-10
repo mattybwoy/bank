@@ -3,10 +3,25 @@
 User Stories
 
 ```
+As a user of Evil Bank
+So I can look at my account
+I would like to be able to open an account
 
-```
+As a user of Evil Bank
+So I can save up money
+I would like to be able to top up my balance
 
-```
+As a user of Evil Bank
+So I can spend my hard earned cash
+I would like to be able to make a withdrawal
+
+As a user of Evil Bank
+So I can see how poor I really am
+I would like to be able to check my balance
+
+As a user of Evil Bank
+So I can monitor my financial journey
+I would like to be able to see when my account transactions were made
 
 ```
 
