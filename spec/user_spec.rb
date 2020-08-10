@@ -1,10 +1,10 @@
 require './lib/user'
 
 describe User do
-  describe 'Create an account' do
-    it 'creates a user account' do
+  describe 'Create a user' do
+    it 'creates a user that accepts name on initialize' do
       name = User.new(name)
-      expect(name).to be_an_instance_of(User)
+      expect(name).to eq(name)
     end
   end
 end
