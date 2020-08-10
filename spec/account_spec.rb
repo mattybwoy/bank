@@ -7,4 +7,11 @@ describe Account do
       expect(subject.balance).to eq(0)
     end
   end
+  describe 'Deposit funds into account' do
+    it 'allows user to deposit funds into account' do
+      account = Account.new
+      account.deposit(500)
+      expect(account.balance).to eq(500)
+    end
+  end
 end
