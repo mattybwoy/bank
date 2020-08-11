@@ -1,5 +1,11 @@
+require_relative 'account'
+
 class Statement
+
   def initialize
-    print 'date || credit || debit || balance'
+    puts 'date || credit || debit || balance' 
+    p @test
+    puts @transactions
   end
+
 end

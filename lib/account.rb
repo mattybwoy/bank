@@ -1,11 +1,12 @@
 require_relative 'statement'
 
 class Account
-  attr_reader :balance, :transactions
+  attr_accessor :balance, :transactions
 
   def initialize
     @balance = 0
     @transactions = []
+    @test = "string"
   end
 
   def deposit(date,input)
@@ -23,7 +24,10 @@ class Account
   end
 
   def print_statement
-    @statement = Statement.new
+    puts 'date || credit || debit || balance'
+    @transactions.reverse.each do |x|
+    puts x.inspect
+    end
   end
 
 end
