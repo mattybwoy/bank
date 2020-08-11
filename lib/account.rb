@@ -1,3 +1,5 @@
+require_relative 'statement'
+
 class Account
   attr_reader :balance
 
@@ -15,5 +17,9 @@ class Account
 
   def check_balance
     @balance
+  end
+
+  def print_statement
+    @statement = Statement.new
   end
 end

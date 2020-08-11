@@ -2,6 +2,7 @@ require './lib/account'
 
 describe Account do
   subject(:account) { Account.new }
+
   describe 'Create an account' do
     it 'creates a user account that has a zero balance' do
       expect(subject.balance).to eq(0)
@@ -25,6 +26,11 @@ describe Account do
       subject.deposit(1250)
       subject.withdraw(500)
       expect(subject.check_balance).to eq(subject.balance)
+    end
+  end
+  describe 'print statement' do
+    it'allows user to print out a statement of their account' do
+      expect(subject.print_statement).to be_an_instance_of(Statement)
     end
   end
 end
