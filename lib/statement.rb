@@ -1,5 +1,5 @@
 class Statement
   def initialize
-    print 'credit || debit || balance'
+    print 'date || credit || debit || balance'
   end
 end
