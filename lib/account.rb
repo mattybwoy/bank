@@ -7,19 +7,22 @@ class Account
     @balance = 0
   end
 
-  def deposit(amount)
-    @balance += amount
+  def deposit(input)
+    @input = input
+    @balance += input
   end
 
-  def withdraw(amount)
-    @balance -= amount
-  end
-
-  def check_balance
-    @balance
+  def withdraw(output)
+    @output = output
+    @balance -= output
   end
 
   def print_statement
     @statement = Statement.new
   end
+
+  private
+    def check_balance
+      @balance
+    end
 end

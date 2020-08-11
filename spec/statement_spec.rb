@@ -2,9 +2,9 @@ require './lib/statement'
 
 describe Statement do
   describe 'Create a statement' do
-    it 'creates a statement for the user' do
-      statement = Statement.new
-      expect(statement).to be_an_instance_of(Statement)
+    it 'creates an empty statement for the user' do
+      expect do statement = Statement.new 
+      end. to output('credit || debit || balance').to_stdout
     end
   end
 end
