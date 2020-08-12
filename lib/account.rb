@@ -6,6 +6,7 @@ class Account
   def initialize
     @balance = 0
     @transactions = []
+    @statement = Statement.new
   end
 
   def deposit(date,input)
@@ -23,10 +24,7 @@ class Account
   end
 
   def print_statement
-    puts 'date || credit || debit || balance'
-    transaction = @transactions.reverse.each do |x|
-      puts x
+    @statement.print(@transactions)
   end
-end
 
 end

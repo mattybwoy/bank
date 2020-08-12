@@ -2,9 +2,11 @@ require_relative 'account'
 
 class Statement
 
-  def initialize
+  def print(transactions)
     puts 'date || credit || debit || balance' 
-    puts @transactions
+    transactions.reverse.each do |x|
+    puts x
   end
+end 
 
 end

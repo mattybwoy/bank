@@ -1,8 +1,8 @@
 require './lib/statement'
 
 describe Statement do
-  describe 'Create a statement' do
-    xit 'creates an empty statement for the user' do
+  describe 'Print statement' do
+    it 'prints a statement out for user' do
       expect do statement = Statement.new 
       end. to output('date || credit || debit || balance').to_stdout
     end
