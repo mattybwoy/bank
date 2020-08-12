@@ -22,15 +22,22 @@ describe Account do
     end
   end
   describe 'print statement' do
-    xit'allows user to print out a statement of their account' do
-      expect(subject.print_statement).to be_an_instance_of(Statement)
+    it'allows user to print out a statement of their account' do
+      subject.deposit('10-01-2012'  , 1000)
+      subject.withdraw('12-01-2012', 250)
+      statement = <<~STATEMENT
+        date || credit || debit || balance
+        12-01-2012 || || 250.00 || 1100.00
+        10/01/2012 || 1000.00 || || 1000.00
+      STATEMENT
+      expect { account.print_statement }.to output(statement).to_stdout
     end
   end
   describe 'transactions' do
     it'records the transactions of the user' do
       subject.deposit("10-01-2012", 1000)
       subject.withdraw("14-01-2012", 500)
-      expect(subject.transactions).to eq([["10-01-2012", 1000, 0, 1000], ["14-01-2012", 0, 500, 500]])
+      expect(subject.transactions).to eq(["10-01-2012 || 1000 || || 1000", "14-01-2012 || || 500 || 500"])
     end
   end
 end

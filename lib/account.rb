@@ -13,21 +13,21 @@ class Account
     @date = date
     @input = input
     @balance += input
-    @transactions << [@date, @input, 0, @balance]
+    @transactions << ("#{@date} || #{@input} || || #{@balance}")
   end
 
   def withdraw(date, output)
     @date = date
     @output = output
     @balance -= output
-    @transactions << [@date, 0, @output, @balance]
+    @transactions << ("#{@date} || || #{@output} || #{@balance}")
   end
 
   def print_statement
     puts 'date || credit || debit || balance'
-    @transactions.reverse.each do |x|
-    puts x.inspect
-    end
+    transaction = @transactions.reverse.each do |x|
+      puts x
   end
+end
 
 end
