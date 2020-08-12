@@ -6,21 +6,20 @@ class Account
   def initialize
     @balance = 0
     @transactions = []
-    @test = "string"
   end
 
   def deposit(date,input)
     @date = date
     @input = input
     @balance += input
-    @transactions << ("#{@date} || #{@input} || || #{@balance}")
+    @transactions << ("#{@date} || #{'%.2f' % @input} || || #{'%.2f' % @balance}")
   end
 
   def withdraw(date, output)
     @date = date
     @output = output
     @balance -= output
-    @transactions << ("#{@date} || || #{@output} || #{@balance}")
+    @transactions << ("#{@date} || || #{'%.2f' % @output} || #{'%.2f' % @balance}")
   end
 
   def print_statement
