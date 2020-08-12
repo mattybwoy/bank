@@ -48,13 +48,14 @@ date || credit || debit || balance
 ## Progress
 Basic version of bank account created, user class not currently linked with account.
 Deposit and withdrawal functions can update the balance. User can view their balance at anytime.
+Print statement now in separate class with sole responsability.
 
 ## Improvements
 
 ## Installation
 - Clone repository
 - run ```bundle install```
-
+- run in terminal ```irb -r ./lib/account```
 
 
 ## Collaborators
