@@ -1,4 +1,5 @@
 require './lib/account'
+require './lib/process'
 
 describe Account do
   subject(:account) { Account.new }
@@ -8,35 +9,13 @@ describe Account do
       expect(subject.balance).to eq(0)
     end
   end
-  describe 'Deposit funds into account' do
-    it 'allows user to deposit funds into account' do
-      subject.deposit(10-01-2012,500)
-      expect(subject.balance).to eq(500)
-    end
-  end
-  describe 'Withdraw funds from account' do
-    it 'allows user to withdraw funds from their account' do
-      subject.deposit(10-01-2012, 1000)
-      subject.withdraw(14-01-2012, 500)
-      expect(subject.balance).to eq(500)
-    end
-  end
-  describe 'print statement' do
-    it'allows user to print out a statement of their account' do
-      subject.deposit('10-01-2012'  , 1000)
-      subject.withdraw('12-01-2012', 250)
-      statement = <<~STATEMENT
-        date || credit || debit || balance
-        12-01-2012 || || 250.00 || 750.00
-        10-01-2012 || 1000.00 || || 1000.00
-      STATEMENT
-      expect { account.print_statement }.to output(statement).to_stdout
-    end
-  end
   describe 'transactions' do
     it'records the transactions of the user' do
-      subject.deposit("10-01-2012", 1000)
-      subject.withdraw("14-01-2012", 500)
+      processor = Processor.new
+      subject.make_deposit("10-01-2012", 1000)
+      processor.deposit("10-01-2012", 1000)
+      subject.make_withdrawal("14-01-2012", 500)
+      processor.withdraw("14-01-2012", 500)
       expect(subject.transactions).to eq(["10-01-2012 || 1000.00 || || 1000.00", "14-01-2012 || || 500.00 || 500.00"])
     end
   end

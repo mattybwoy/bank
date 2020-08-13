@@ -1,4 +1,5 @@
 require_relative 'statement'
+require_relative 'process'
 
 class Account
   attr_accessor :balance, :transactions
@@ -7,20 +8,17 @@ class Account
     @balance = 0
     @transactions = []
     @statement = Statement.new
+    @processor = Processor.new
   end
 
-  def deposit(date,input)
+  def make_deposit(date, input)
     @date = date
     @input = input
-    @balance += input
-    @transactions << ("#{@date} || #{'%.2f' % @input} || || #{'%.2f' % @balance}")
+    @processor.deposit(@date, @input)
   end
 
-  def withdraw(date, output)
-    @date = date
-    @output = output
-    @balance -= output
-    @transactions << ("#{@date} || || #{'%.2f' % @output} || #{'%.2f' % @balance}")
+  def make_withdrawal(date, output)
+    @processor.withdraw(date, output)
   end
 
   def print_statement
