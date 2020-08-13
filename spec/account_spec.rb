@@ -27,8 +27,8 @@ describe Account do
       subject.withdraw('12-01-2012', 250)
       statement = <<~STATEMENT
         date || credit || debit || balance
-        12-01-2012 || || 250.00 || 750.00
-        10-01-2012 || 1000.00 || || 1000.00
+        2012-01-12 || || 250.00 || 750.00
+        2012-01-10 || 1000.00 || || 1000.00
       STATEMENT
       expect { account.print_statement }.to output(statement).to_stdout
     end
@@ -37,7 +37,7 @@ describe Account do
     it'records the transactions of the user' do
       subject.deposit("10-01-2012", 1000)
       subject.withdraw("14-01-2012", 500)
-      expect(subject.transactions).to eq(["10-01-2012 || 1000.00 || || 1000.00", "14-01-2012 || || 500.00 || 500.00"])
+      expect(subject.transactions).to eq(["2012-01-10 || 1000.00 || || 1000.00", "2012-01-14 || || 500.00 || 500.00"])
     end
   end
 end

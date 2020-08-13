@@ -16,14 +16,14 @@
           1,
           1,
           1,
-          1,
+          0,
           null,
           null,
           1,
           1,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
           1,
@@ -51,6 +51,7 @@
       "/Users/matthew/Desktop/Matthew/Makers/Makers_week10/bank_tech/lib/account.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           1,
@@ -63,13 +64,14 @@
           null,
           1,
           5,
-          5,
+          3,
+          3,
           null,
           null,
           1,
-          null,
-          4,
-          4,
+          3,
+          3,
+          3,
           null,
           null,
           1,
@@ -120,6 +122,6 @@
         ]
       }
     },
-    "timestamp": 1597324379
+    "timestamp": 1597337822
   }
 }

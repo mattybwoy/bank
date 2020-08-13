@@ -11,8 +11,8 @@ class Account
   end
 
   def deposit(date,input)
-    @balance += input
     date = Date.parse(date)
+    @balance += input
     @transactions << ("#{date} || #{'%.2f' % input} || || #{'%.2f' % @balance}")
   end
 
