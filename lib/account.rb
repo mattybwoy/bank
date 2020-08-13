@@ -1,4 +1,5 @@
 require_relative 'statement'
+require 'date'
 
 class Account
   attr_accessor :balance, :transactions
@@ -10,17 +11,15 @@ class Account
   end
 
   def deposit(date,input)
-    @date = date
-    @input = input
     @balance += input
-    @transactions << ("#{@date} || #{'%.2f' % @input} || || #{'%.2f' % @balance}")
+    date = Date.parse(date)
+    @transactions << ("#{date} || #{'%.2f' % input} || || #{'%.2f' % @balance}")
   end
 
   def withdraw(date, output)
-    @date = date
-    @output = output
+    date = Date.parse(date)
     @balance -= output
-    @transactions << ("#{@date} || || #{'%.2f' % @output} || #{'%.2f' % @balance}")
+    @transactions << ("#{date} || || #{'%.2f' % output} || #{'%.2f' % @balance}")
   end
 
   def print_statement
