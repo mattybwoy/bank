@@ -12,8 +12,8 @@ describe Statement do
       account.withdraw('12-01-2012', 250)
       statement = <<~STATEMENT
         date || credit || debit || balance
-        2012-01-12 || || 250.00 || 750.00
-        2012-01-10 || 1000.00 || || 1000.00
+        12/1/2012 || || 250.00 || 750.00
+        10/1/2012 || 1000.00 || || 1000.00
       STATEMENT
       expect { account.print_statement }.to output(statement).to_stdout
     end
