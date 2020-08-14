@@ -4,10 +4,10 @@ require 'date'
 class Account
   attr_accessor :balance, :transactions
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = 0
     @transactions = []
-    @statement = Statement.new
+    @statement = statement
   end
 
   def deposit(date,input)
