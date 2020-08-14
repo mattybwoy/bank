@@ -51,17 +51,19 @@ date || credit || debit || balance
 Basic version of bank account created.
 Deposit and withdrawal functions can update the balance. User can view their balance at anytime.
 Print statement now in separate class with sole responsability.
+Dates have been formatted to date, month, year.
 
 ## Improvements
-- Edgecases for date formatting
+- Additional split class for processing
+- Mocking, dependency injection
 
 ## Installation
 - Clone repository
 - run ```bundle install```
 - run in terminal ```irb -r ./lib/account```
 - create an account by ```example = Account.new```
-- Deposit money using format date as a string followed by amount as an integer. ```example.deposit('12-01-20', 100)```
-- Withdraw money using format date as a string followed by amount as an integer. ```example.withdraw('13-01-20', 20)```
+- Deposit money using format date as a string followed by amount as an integer. ```example.deposit('12-01-2020', 100)```
+- Withdraw money using format date as a string followed by amount as an integer. ```example.withdraw('13-01-2020', 20)```
 - Statement can be viewed by using command ```example.print_statement```
 ![](images/screenshot_bank.png)
 
