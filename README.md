@@ -52,10 +52,10 @@ Basic version of bank account created.
 Deposit and withdrawal functions can update the balance. User can view their balance at anytime.
 Print statement now in separate class with sole responsability.
 Dates have been formatted to date, month, year.
+Dependency injection and mocking included in testing
 
 ## Improvements
 - Additional split class for processing
-- Mocking, dependency injection
 
 ## Installation
 - Clone repository
@@ -70,6 +70,7 @@ Dates have been formatted to date, month, year.
 ## Testing
 - Using Rspec the testing suite
 - Simplecov test coverage at 100%
+- 7 passing tests
 
 ## Collaborators
 mattybwoy
