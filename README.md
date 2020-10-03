@@ -48,6 +48,7 @@ date || credit || debit || balance
 
 ## Progress
 ![](images/Bank.png)
+
 Basic version of bank account created.
 Deposit and withdrawal functions can update the balance. User can view their balance at anytime.
 Print statement now in separate class with sole responsability.
